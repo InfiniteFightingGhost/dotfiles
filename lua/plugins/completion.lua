@@ -24,7 +24,6 @@ return {
 
     -- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
     require("luasnip.loaders.from_vscode").lazy_load()
-
     cmp.setup({
       completion = {
         completeopt = "menu,menuone,preview,fuzzy,nosort,noselect",
@@ -35,8 +34,8 @@ return {
         end,
       },
       mapping = cmp.mapping.preset.insert({
-        ["k"] = cmp.mapping.select_prev_item(), -- previous suggestion
-        ["j"] = cmp.mapping.select_next_item(), -- next suggestion
+        ["K"] = cmp.mapping.select_prev_item(), -- previous suggestion
+        ["J"] = cmp.mapping.select_next_item(), -- next suggestion
         ["<C-b>"] = cmp.mapping.scroll_docs(-4),
         ["<C-f>"] = cmp.mapping.scroll_docs(4),
         ["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
@@ -45,7 +44,7 @@ return {
       }),
       -- sources for autocompletion
       sources = cmp.config.sources({
-        { name = "nvim_lsp"},
+        { name = "nvim_lsp"}, -- language server protocol
         { name = "luasnip" }, -- snippets
         { name = "buffer" }, -- text within current buffer
         { name = "path" }, -- file system paths

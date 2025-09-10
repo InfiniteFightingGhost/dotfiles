@@ -2,7 +2,7 @@ vim.g.mapleader = " "
 
 --vim.keymap.set('n', '<leader>hl', vim.cmd.Ex)
 -- General keymaps
-vim.keymap.set('n', '<TAB>l', vim.cmd.Ex)
+vim.keymap.set('n', '<leader>hl', vim.cmd.Ex)
 
 -- Move Lines
 vim.keymap.set('v', "<A-j>", ":m '>+1<CR>gv=gv")
@@ -38,3 +38,14 @@ vim.keymap.set('n','<leader>u', function() undo.toggle() end)
 
 -- Floating cmd line
 vim.api.nvim_set_keymap('n', ':', '<cmd>FineCmdline<CR>', {noremap = true, silent = true})
+
+--dotnet bs
+local dotnet = require('easy-dotnet')
+vim.keymap.set('n','<F5>', function()
+    dotnet.run_project()
+end, {desc = 'Run .Net run_project'})
+
+vim.keymap.set('n','<F1>', function()
+    dotnet.build()
+end, {desc = 'Build the .Net project'})
+

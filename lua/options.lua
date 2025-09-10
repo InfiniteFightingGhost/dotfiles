@@ -3,7 +3,7 @@ vim.o.cmdheight=0
 --line number color mapping
 vim.api.nvim_set_hl(0, 'LineNr', { fg = '#764259', bg='#181616', bold = true,italic=true})
 
-vim.opt.nu = true
+vim.opt.number = true
 vim.opt.relativenumber = true
 
 vim.g.have_nerd_font = true

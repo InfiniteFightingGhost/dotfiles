@@ -18,7 +18,12 @@ return {
                 theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
             },
             overrides = function(colors) -- add/modify highlights
-                return {}
+                return 
+                {
+                    NormalFloat = { bg = "none" },
+                    FloatBorder = { bg = "none" },
+                    FloatTitle = { bg = "none" },
+                }
             end,
             theme = "dragon",              -- Load "wave" theme
             background = {               -- map the value of 'background' option to a theme
